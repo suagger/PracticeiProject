@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fl_main"
+        android:background="#FAFAFA"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:paddingTop="?android:attr/actionBarSize">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="完成度占比图："
+                android:textColor="#0A0A0A"
+                android:textSize="20dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C4C4C4" />
+
+            <com.example.modulea.data.MyView
+                android:id="@+id/myview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/group"
+            android:background="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/chart_blue"
+                android:text="完成任务    " />
+
+            <RadioButton
+                android:id="@+id/unsuccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/chart_green"
+                android:text="未完成" />
+
+        </RadioGroup>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:background="#C4C4C4"
+            android:layout_height="1dp"/>
+
+        <View
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:background="#C4C4C4"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@mipmap/task"
+                android:gravity="center_vertical"
+                android:text="  任务类别"
+                android:textColor="#0A0A0A"
+                android:textSize="18dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C4C4C4" />
+
+            <TextView
+                android:id="@+id/ok"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@mipmap/happy"
+                android:gravity="center_vertical"
+                android:onClick="@{onClickListener}"
+                android:text="  已完成清单中的任务"
+                android:textColor="#0A0A0A"
+                android:textSize="15dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C4C4C4" />
+
+
+            <TextView
+                android:id="@+id/no"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@mipmap/sad"
+                android:gravity="center_vertical"
+                android:onClick="@{onClickListener}"
+                android:text="  待完成清单中的任务"
+                android:textColor="#0A0A0A"
+                android:textSize="15dp" />
+
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C4C4C4" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

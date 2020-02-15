@@ -1,0 +1,2 @@
+include ':app', ':modulea', ':moduleb', ':modulec', ':moudled', ':common'
+rootProject.name='MVVMApplication'
