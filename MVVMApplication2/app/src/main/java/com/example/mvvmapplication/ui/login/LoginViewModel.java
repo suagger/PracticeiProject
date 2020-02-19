@@ -4,8 +4,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import android.util.Patterns;
-
 import com.example.mvvmapplication.data.LoginRepository;
 import com.example.mvvmapplication.data.Result;
 import com.example.mvvmapplication.data.model.LoggedInUser;
@@ -13,17 +11,22 @@ import com.example.mvvmapplication.R;
 
 public class LoginViewModel extends ViewModel {
 
-    private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
-    private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
+    private MutableLiveData<LoginResult> loginResult;
+    private MutableLiveData<Boolean> logging;
+    //注意！在xml文件中关联livedate对象时候需要调用get方法，需要显式写出，否则xml文件中无法识别
+    public MutableLiveData<Boolean> getLogging() {
+        if (logging == null) {
+            return new MutableLiveData<>();
+        }
+        return logging;
+    }
+
     private LoginRepository loginRepository;
 
     LoginViewModel(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;
     }
 
-    LiveData<LoginFormState> getLoginFormState() {
-        return loginFormState;
-    }
 
     LiveData<LoginResult> getLoginResult() {
         return loginResult;
@@ -42,37 +45,22 @@ public class LoginViewModel extends ViewModel {
     }
 
     public void loginByQQ() {
+        logging.setValue(true);
         loginRepository.loginByQQ();
     }
 
     public void loginByWX() {
+        logging.setValue(true);
         loginRepository.loginByWX();
     }
 
-    public void loginDataChanged(String username, String password) {
-        if (!isUserNameValid(username)) {
-            loginFormState.setValue(new LoginFormState(R.string.invalid_username, null));
-        } else if (!isPasswordValid(password)) {
-            loginFormState.setValue(new LoginFormState(null, R.string.invalid_password));
-        } else {
-            loginFormState.setValue(new LoginFormState(true));
-        }
+    public void loginOneKey() {
+        logging.setValue(true);
+        loginRepository.loginOneKey();
     }
 
-    // A placeholder username validation check
-    private boolean isUserNameValid(String username) {
-        if (username == null) {
-            return false;
-        }
-        if (username.length() < 6) {
-            return false;
-        } else {
-            return !username.trim().isEmpty();
-        }
+    private void logging() {
+
     }
 
-    // A placeholder password validation check
-    private boolean isPasswordValid(String password) {
-        return password != null && password.trim().length() > 5;
-    }
 }

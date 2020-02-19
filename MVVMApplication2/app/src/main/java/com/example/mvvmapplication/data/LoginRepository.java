@@ -59,4 +59,8 @@ public class LoginRepository {
     public void loginByWX() {
 
     }
+
+    public void loginOneKey() {
+
+    }
 }
