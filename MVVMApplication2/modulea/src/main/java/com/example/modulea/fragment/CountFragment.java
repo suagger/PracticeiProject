@@ -48,8 +48,12 @@ public class CountFragment extends Fragment implements MyView.OnItemClickListene
         group.setOnCheckedChangeListener(this);
          return view;
     }
+<<<<<<< HEAD
 
 
+=======
+    Toast lastToast = null;
+>>>>>>> 未添加网络请求
     @SuppressLint("ShowToast")
     @Override
     public void onItemClick(int position) {
@@ -59,10 +63,21 @@ public class CountFragment extends Fragment implements MyView.OnItemClickListene
         }else if (position == 1){
             toast = Toast.makeText(getContext(),"完成 ："  + (int)pieEntries.get(position).getNumber(),Toast.LENGTH_SHORT);
         }
+<<<<<<< HEAD
         if(toast != null){
             toast.setGravity(Gravity.TOP,0,getView().getMeasuredHeight() / 3);
             toast.show();
         }
+=======
+        if(toast != null) {
+            toast.setGravity(Gravity.TOP, 0, getView().getMeasuredHeight() / 3);
+            toast.show();
+        }
+        if(lastToast != null){
+            lastToast.cancel();
+        }
+        lastToast = toast;
+>>>>>>> 未添加网络请求
     }
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -84,8 +99,12 @@ public class CountFragment extends Fragment implements MyView.OnItemClickListene
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.ok || id == R.id.no) {
+<<<<<<< HEAD
 //            startActivity(new Intent(getContext(), RecyclerViewActivity.class));
             ARouter.getInstance().build("/app/RecyclerViewActivity").navigation();
+=======
+            ARouter.getInstance().build("/pointer/RecyclerViewActivity").navigation();
+>>>>>>> 未添加网络请求
         }
     }
 

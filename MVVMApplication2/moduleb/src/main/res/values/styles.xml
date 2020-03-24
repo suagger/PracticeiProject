@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+<<<<<<< HEAD
+=======
+    <style name="MaterialCalendarTextColor">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="CustomText">
+        <item name="android:textColor">@color/colorBlue</item>
+    </style>
+>>>>>>> 未添加网络请求
 </resources>

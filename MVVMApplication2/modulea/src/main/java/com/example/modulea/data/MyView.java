@@ -234,7 +234,11 @@ public class MyView extends View {
 
 
     public interface OnItemClickListener{
+<<<<<<< HEAD
         public void onItemClick(int position);
+=======
+        void onItemClick(int position);
+>>>>>>> 未添加网络请求
     }
 
     public void setRadius(float radius){

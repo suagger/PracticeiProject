@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="onTabClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="#99CCFF"
+            android:layout_height="wrap_content">
+
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                android:id="@+id/calendar"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:mcv_selectionColor="#CCCCFF"
+                app:mcv_weekDayLabels="@array/custom_myweekdays"
+                app:mcv_weekDayTextAppearance="@style/MaterialCalendarTextColor"
+                app:mcv_dateTextAppearance="@style/MaterialCalendarTextColor"
+                app:mcv_headerTextAppearance="@style/MaterialCalendarTextColor"
+                app:mcv_showOtherDates="all"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            >
+
+            <Button
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/change_button"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{onTabClick}"
+                android:background="@drawable/pull"
+                />
+
+            <Button
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/add_button"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="right"
+                style="?android:attr/borderlessButtonStyle"
+                android:onClick="@{onTabClick}"
+                android:background="@drawable/add"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C4C4C4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/ic_launcher_foreground"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

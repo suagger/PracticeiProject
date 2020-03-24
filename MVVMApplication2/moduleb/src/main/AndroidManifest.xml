@@ -3,7 +3,11 @@
     package="com.example.moduleb">
 
     <application>
+<<<<<<< HEAD
         <activity android:name=".ModuleBActivity">
+=======
+        <activity android:name=".activity.ModuleBActivity">
+>>>>>>> 未添加网络请求
         </activity>
     </application>
 

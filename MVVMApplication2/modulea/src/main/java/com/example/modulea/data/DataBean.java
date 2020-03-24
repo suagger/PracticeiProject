@@ -17,6 +17,7 @@ public class DataBean extends BaseObservable implements IBaseBindingAdapterItem 
         notifyPropertyChanged(BR.time);
     }
 
+<<<<<<< HEAD
     public void setItem(String item) {
         this.itemThing = itemThing;
         notifyPropertyChanged(BR.itemThing);
@@ -24,6 +25,11 @@ public class DataBean extends BaseObservable implements IBaseBindingAdapterItem 
 
     public void setItemThing(String itemThing) {
         this.itemThing = itemThing;
+=======
+    public void setItemThing(String itemThing) {
+        this.itemThing = itemThing;
+        notifyPropertyChanged(BR.itemThing);
+>>>>>>> 未添加网络请求
     }
 
     @Bindable

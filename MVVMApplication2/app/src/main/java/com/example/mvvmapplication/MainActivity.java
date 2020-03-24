@@ -10,6 +10,10 @@ import android.os.Bundle;
 import android.widget.RadioGroup;
 
 import com.example.modulea.fragment.CountFragment;
+<<<<<<< HEAD
+=======
+import com.example.moduleb.fragment.RemindingFragment;
+>>>>>>> 未添加网络请求
 import com.example.mvvmapplication.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
@@ -38,7 +42,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         FragmentTransaction transaction = manager.beginTransaction();
 
         if(checkedId == R.id.rb_1){
+<<<<<<< HEAD
 
+=======
+>>>>>>> 未添加网络请求
             hideFragment(transaction);
             Fragment f1 = new CountFragment();
             transaction.replace(R.id.fl_content,f1);
@@ -50,7 +57,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             transaction.commit();
         }else if(checkedId == R.id.rb_3){
             hideFragment(transaction);
+<<<<<<< HEAD
             Fragment f3 = new CountFragment();
+=======
+            Fragment f3 = new RemindingFragment();
+>>>>>>> 未添加网络请求
             transaction.replace(R.id.fl_content,f3);
             transaction.commit();
         }else if(checkedId == R.id.rb_4){

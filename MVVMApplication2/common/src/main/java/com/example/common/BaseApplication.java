@@ -6,6 +6,11 @@ import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
+<<<<<<< HEAD
+=======
+import org.litepal.LitePal;
+
+>>>>>>> 未添加网络请求
 public class BaseApplication extends Application {
 
     private boolean isModuleARouter = true;
@@ -15,6 +20,10 @@ public class BaseApplication extends Application {
         super.onCreate();
         instance = this;
         initRouter();
+<<<<<<< HEAD
+=======
+        LitePal.initialize(this);
+>>>>>>> 未添加网络请求
     }
 
     public static BaseApplication getInstance() {

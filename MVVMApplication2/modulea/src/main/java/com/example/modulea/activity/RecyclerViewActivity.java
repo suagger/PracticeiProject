@@ -5,10 +5,15 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+<<<<<<< HEAD
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+=======
+import android.os.Bundle;
+import android.view.View;
+>>>>>>> 未添加网络请求
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.common.BaseActivity;
@@ -21,16 +26,23 @@ import com.example.modulea.base.MutiItemAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 @Route(path = "/app/RecyclerViewActivity")
+=======
+@Route(path = "/pointer/RecyclerViewActivity")
+>>>>>>> 未添加网络请求
 public class RecyclerViewActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener {
 
     private MutiItemAdapter adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
     private List<IBaseBindingAdapterItem> mList = new ArrayList<>();
 
+<<<<<<< HEAD
     public RecyclerViewActivity() {
     }
 
+=======
+>>>>>>> 未添加网络请求
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +56,10 @@ public class RecyclerViewActivity extends BaseActivity implements SwipeRefreshLa
         swipeRefreshLayout = binding.refreshLayout;
         swipeRefreshLayout.setOnRefreshListener(this);
         binding.back.setOnClickListener(this);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 未添加网络请求
     }
 
     public void initData(){
